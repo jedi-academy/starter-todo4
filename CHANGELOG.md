@@ -4,6 +4,7 @@
 
 #Style Conventions
 - 4 space indentation
+- Oldest first
 
 
 # Changelog
@@ -14,3 +15,6 @@ All notable changes to this project will be documented in this file.
 ## [1.0.0] - 2017-10-12
  - Initialized the project by forking from: https://github.com/jedi-academy/starter-todo4.
  - Added a data model to retrieve data from a csv file.
+ - Updated base controller to allow for pre-rendered content.
+ - Updated homepage view to include alert of unfinished tasks and table of 5 tasks to do.
+ - Updated Welcome controller to count unfinished tasks and get 5 tasks to do.
