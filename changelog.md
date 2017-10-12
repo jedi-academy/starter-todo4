@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [0.4.0] - 2017-10-22
+## [0.5.0] - 2017-10-22
 ### Added
 - Parsedown.php to application/libraries/
 - jobs.md to data/
@@ -12,6 +12,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 - config.php to include helpme controller target link
+
+## [0.4.0] - 2017-10-12
+### Added
+- Setup the second template
+- Made a view controller
+- Made priorited and category views
 
 ## [0.3.0] - 2017-10-12
 ### Added
