@@ -13,3 +13,4 @@ All notable changes to this project will be documented in this file.
 
 ## [1.0.0] - 2017-10-12
  - Initialized the project by forking from: https://github.com/jedi-academy/starter-todo4.
+ - Added a data model to retrieve data from a csv file.
