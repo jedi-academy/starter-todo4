@@ -6,56 +6,23 @@ Team membership:
 
 Changelog format: [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) 
 
-Release Date: Oct 15, 2017
+Release Date: Oct 12, 2017
+
 ## *Version 1.0*
-[!!!added before submission!!!-----------DELETE THIS LINE BEFORE SUBMISSION]
 ### Description
-    - 
+    - Completed Job 5
 ### Updated components
-    - 
+    - config/config.php
+        - Updated the Help Wanted menu link to display from the Helpme controller.
+    - config/autoload.php
+        - Added the Parsedown library to the autoload list.
 ### New Components
-    -  
-
-
-## *Version 0.9*
-### Description
-    - 
-### Updated components
-    - 
-### New Components
-    -  
- 
-## *Version 0.8*
-### Description
-    - 
-### Updated components
-    -                           
-### New Components
-    -  
-
-## *Version 0.7*
-### Description
-    - 
-### Updated components
-    - 
-### New Components
-    -  
-      
-## *Version 0.6*
-### Description
-    - 
-### Updated components
-    - 
-### New Components
-    - 
-
-## *Version 0.5*
-### Description
-    - 
-### Updated components
-    - 
-### New Components
-    - 
+    - controllers/Helpme.php
+        - Displays a request parsed from markdown.
+    - data/jobs.md
+        - A markdown file containing a request to be displayed.
+    - libraries/Parsedown.php
+        - Added a markdown parse library.
 
 ## *Version 0.4*
 ### Description
