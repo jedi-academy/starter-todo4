@@ -15,3 +15,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Changed autoload.php to load tasks.csv
 - Updated changelog.md
 
+## [1.0.2] - 2017-10-12 (Judy Zhu)
+
+- Modified homepage page to display information about tasks
+- Updated changelog.md
+
