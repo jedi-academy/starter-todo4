@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - jobs.md to data/
 - 'parsedown' to autoload libraries
 
+### Changed
+- config.php to include helpme controller target link
+
 ## [0.3.0] - 2017-10-12
 ### Added
 - Made isset pre-condition on MY_Controller.php and set pagetitle

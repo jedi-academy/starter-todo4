@@ -1,4 +1,3 @@
-# Help Wanted
 Looking for help with **COMP4711 Lab.**
 
 ### Must have following:
