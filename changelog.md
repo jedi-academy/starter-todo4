@@ -24,3 +24,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Changed Work link to display tasks sorted by Priority and by Category
 - Updated changelog.md
+
+## [1.0.4] - 2017-10-12 (Judy Zhu)
+
+- Changed Help Wanted link to display content
+- Updated changelog.md
