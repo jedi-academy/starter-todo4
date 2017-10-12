@@ -44,4 +44,36 @@ class Welcome extends Application
 		$this->render(); 
 	}
 
+	function makePrioritizedPanel($tasks)
+	{
+	    // extract the undone tasks
+	    foreach ($tasks as $task)
+	    {
+	        if ($task->status != 2)
+	            $undone[] = $task;
+	    }
+
+	    // order them by priority
+		usort($undone, "orderByPriority");
+
+		// substitute the priority name
+		foreach ($undone as $task)
+	    	$task->priority = $this->app->priority($task->priority);
+
+	     // and then pass them on
+	    $parms = ['display_tasks' => $converted];
+	    return $this->parser->parse('by_priority', $parms, true);
+    }
+
+    // return -1, 0, or 1 of $a's priority is higher, equal to, or lower than $b's
+	function orderByPriority($a, $b)
+	{
+	    if ($a->priority > $b->priority)
+	        return -1;
+	    elseif ($a->priority < $b->priority)
+	        return 1;
+	    else
+	        return 0;
+	}
+
 }
