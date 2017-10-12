@@ -5,6 +5,6 @@ class Tasks extends CSV_Model {
         {
                 parent::__construct(APPPATH . '../data/tasks.csv', 'id');
         }
-
+        
 }
 ?>
