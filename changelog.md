@@ -9,3 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - changelog
 
+## [1.0.1] - 2017-10-12 (Benjamin Wang)
+
+- Added Tasks.php
+- Changed autoload.php to load tasks.csv
+- Updated changelog.md
+
