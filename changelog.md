@@ -20,3 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Modified homepage page to display information about tasks
 - Updated changelog.md
 
+## [1.0.3] - 2017-10-12 (Benjamin Wang)
+
+- Changed Work link to display tasks sorted by Priority and by Category
+- Updated changelog.md
