@@ -1,0 +1,9 @@
+COMP4711 SET 4R
+Group COMP4711Lab0-3
+Eric Lin(Captain), Jason Sekhon(First Mate)
+Repo: https://github.com/COMP4711Lab0-3/starter-todo4
+
+---------------------------
+* added changelog
+
+* added task model and pre-loaded the model
