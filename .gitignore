@@ -4,6 +4,7 @@
 */cache/*
 !*/cache/index.html
 !*/cache/.htaccess
+.metadata
 
 user_guide_src/build/*
 user_guide_src/cilexer/build/*
@@ -16,3 +17,12 @@ application/logs/*
 !application/logs/.htaccess
 /vendor/
 /nbproject/private/
+
+#NetBeans
+/nbproject/
+
+#Mac Additional System Files
+.DS_Store
+
+#Jetbrains IDE
+.idea/
