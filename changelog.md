@@ -66,11 +66,17 @@ Release Date: Oct 15, 2017
 
 ## *Version 0.3*
 ### Description
-    - 
+    - Completed Job 2
+    - Fixed some issues in Job 1
 ### Updated Components
-    -
-### New Components
-    -  
+    - constants.php (Terra)
+        - DATAPATH fixed.
+    - public/index.php (Terra)
+        - Returned the FCPATH definition because problems.
+    - controller/Welcome.php (Terra)
+        - Added functionality to display tasks
+    - views/homepage.php
+        - Added table to the page, that is controlled by the controller
 
 ## *Version 0.2*
 ### Description

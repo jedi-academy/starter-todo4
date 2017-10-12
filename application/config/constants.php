@@ -92,6 +92,5 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
  * Custom defined constants
  */
 // Path to the front controller (this file) directory
-define('FCPATH', dirname(__FILE__).DIRECTORY_SEPARATOR);
 
-define('DATAPATH', FCPATH . 'data/');
+define('DATAPATH', $application_folder.DIRECTORY_SEPARATOR . '../data/');

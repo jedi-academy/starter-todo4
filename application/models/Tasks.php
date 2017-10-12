@@ -6,7 +6,7 @@ class Tasks extends CSV_Model {
     // Constructor
     public function __construct()
     {
-            parent::__construct(DATAPATH . 'tasks.csv', 'id');
+           parent::__construct(DATAPATH . 'tasks.csv', 'id');
            
     }
     
