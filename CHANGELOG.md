@@ -20,3 +20,9 @@ All notable changes to this project will be documented in this file.
  - Updated homepage view to include alert of unfinished tasks and table of 5 tasks to do.
  - Updated Welcome controller to count unfinished tasks and get 5 tasks to do.
  - Updated Help wanted page to be able to display a markdown style wanting ad list.
+ - Added template_secondary view to display sorted task panels.
+ - Updated base controller to fix bug.
+ - Added Views controller to display sorted task panels.
+ - Added by_priority view for tasks list sorted by priority.
+ - Added by_category view for tasks list sorted by category.
+ - Updated Tasks model with function to generate tasks list ordered by category.
