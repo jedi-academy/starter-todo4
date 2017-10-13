@@ -1,17 +1,13 @@
-#Members
-- T Guan
-- J Liang
-
-#Style Conventions
-- 4 space indentation
-- Changes are grouped by commit date in descending order.
-- Oldest changes come first within each group but the order don't really matter.
-
-
 # Changelog
 All notable changes to this project will be documented in this file.
+ - Style Conventions
+   - 4 space indentation
+   - Changes are grouped by commit date in descending order.
+   - Oldest changes come first within each group but the order don't really matter.
 
-## [Unreleased]
+# [latest version 1.0.0]
+
+## [version 1.0.0 released] - 2017-10-12
 
 ## [1.0.0] - 2017-10-12
  - Initialized the project by forking from: https://github.com/jedi-academy/starter-todo4.
