@@ -4,7 +4,8 @@
 
 #Style Conventions
 - 4 space indentation
-- Oldest first
+- Changes are grouped by commit date in descending order.
+- Oldest changes come first within each group but the order don't really matter.
 
 
 # Changelog
@@ -18,3 +19,4 @@ All notable changes to this project will be documented in this file.
  - Updated base controller to allow for pre-rendered content.
  - Updated homepage view to include alert of unfinished tasks and table of 5 tasks to do.
  - Updated Welcome controller to count unfinished tasks and get 5 tasks to do.
+ - Updated Help wanted page to be able to display a markdown style wanting ad list.
