@@ -9,7 +9,7 @@ class Tasks extends CSV_Model {
          */
         public function __construct()
         {
-                parent::__construct(APPPATH . DATAPATH, 'id');
+                parent::__construct(APPPATH . DATAPATH.'tasks.csv', 'id');
         }
 }
 ?>

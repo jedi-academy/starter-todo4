@@ -87,4 +87,4 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 /**
  * Constants related to application level files path
  */
-defined('DATAPATH') OR define('DATAPATH', '../data/tasks.csv'); //data file path
+defined('DATAPATH') OR define('DATAPATH', '../data/'); //data file path
