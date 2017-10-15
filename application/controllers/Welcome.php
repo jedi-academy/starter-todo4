@@ -44,6 +44,6 @@ class Welcome extends Application
             
             // produces the page to be displayed.
             $this->data['pagebody'] = 'homepage';
-            $this->render(); 
+            $this->render();
 	}
 }
