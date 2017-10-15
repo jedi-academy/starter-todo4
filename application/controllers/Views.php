@@ -20,7 +20,7 @@ class Views extends Application {
         $this->data['leftside'] = 'by_priority';
         $this->data['rightside'] = 'by_category';
         $this->data['leftside'] = $this->makePrioritizedPanel($tasks);
-        //$this->data['rightside'] = $this->makeCategorizedPanel($tasks);
+        $this->data['rightside'] = $this->makeCategorizedPanel($tasks);
 
         $this->render('template_secondary');
     }
@@ -47,6 +47,11 @@ class Views extends Application {
         // and then pass them on
         $parms = ['display_tasks' => $converted];
         return $this->parser->parse('by_priority', $parms, true);
+    }
+
+    function makeCategorizedPanel($tasks) {
+        $parms = ['display_tasks' => $this->tasks->getCategorizedTasks()];
+        return $this->parser->parse('by_category', $parms, true);
     }
 
 }
