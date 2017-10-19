@@ -1,3 +1,4 @@
+{pagination}
 <table class="table">
     <tr>
         <th>ID</th>
