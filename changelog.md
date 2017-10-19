@@ -20,7 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
  - deletion in itemedit.php
  - form submission in mtce
  - alert in mtce
- - delete in mtce
+ - delete in mtce 
  
 
 ## [1.5.0] - 2017-10-19
