@@ -13,28 +13,41 @@ class Mtce extends Application {
     // Show a single page of todo items
     private function show_page($tasks)
     {
-        $this->data['pagetitle'] = 'TODO List Maintenance';
         // build the task presentation output
         $result = ''; // start with an empty array
         $role = $this->session->userdata('userrole');
         $this->data['pagetitle'] = 'TODO List Maintenance ('. $role . ')';
-        $tasks = $this->tasks->all(); // get all the tasks
-
         // substitute the status name
         foreach ($tasks as $task)
-        if (!empty($task->status))
-                                $task->status = $this->app->status($task->status);
-
-        // build the task presentation output
-        $result = '';   // start with an empty array        
-        foreach ($tasks as $task)
-        $result .= $this->parser->parse('oneitem',(array)$task,true);
-
+        {
+            if (!empty($task->status))
+                $task->status = $this->app->status($task->status);
+                // INSERT the next three lines. The fourth is already there
+            if ($role == ROLE_OWNER)
+                $result .= $this->parser->parse('oneitemx', (array) $task, true);
+            else
+                $result .= $this->parser->parse('oneitem', (array) $task, true);
+        }
         // and then pass them on
         $this->data['display_tasks'] = $result;
         $this->data['pagebody'] = 'itemlist';
         $this->render();
     }
+
+   /* $this->data['pagetitle'] = 'TODO List Maintenance';
+    // build the task presentation output
+    $result = ''; // start with an empty array      
+    foreach ($tasks as $task)
+    {
+        if (!empty($task->status))
+            $task->status = $this->app->status($task->status);
+        $result .= $this->parser->parse('oneitem', (array) $task, true);
+    }
+    $this->data['display_tasks'] = $result;
+
+    // and then pass them on
+    $this->data['pagebody'] = 'itemlist';
+    $this->render();*/
 
     // Extract & handle a page of items, defaulting to the beginning
     function page($num = 1)
