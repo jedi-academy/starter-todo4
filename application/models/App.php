@@ -5,6 +5,40 @@
  */
 class App extends CI_Model
 {
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    // task flags
+    private $flags = [
+        1 => 'Urgent',
+    ];
+    // task groups
+    private $groups = [
+        1	 => 'house',
+        2	 => 'school',
+        3	 => 'work',
+        4	 => 'family'
+    ];
+    // task priorities
+    private $priorities = [
+        1	 => 'low',
+        2	 => 'medium',
+        3	 => 'high'
+    ];
+    // task sizes
+    private $sizes = [
+        1	 => 'small',
+        2	 => 'medium',
+        3	 => 'large'
+    ];
+    // task ststus
+    private $statuses = [
+        1	 => 'in progress',
+        2	 => 'complete',
+    ];
+
 
     public function flag($which = null) {
         return isset($which) ?
@@ -35,11 +69,6 @@ class App extends CI_Model
             (isset($this->statuses[$which]) ? $this->statuses[$which] : '') :
             $this->statuses;
     }
-
-	public function __construct()
-	{
-		parent::__construct();
-	}
 
 
 }
