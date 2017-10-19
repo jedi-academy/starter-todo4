@@ -1,5 +1,6 @@
 # starter-todo
-Starter project for COMP4711 lab 5, Fall 2017
+Updated project for labs 05 and 06.
+Is a to-do list web-app.
 
-It "works" out of the box, sort of, but needs beefing up :(
-Your job is to fix it, per lab 5 directions :)
+**Updated by**
+Andrew Busto & Paul McCarlie
