@@ -12,6 +12,10 @@ All notable changes to this project will be documented in this file.
  - Added Mtce controller for Maintenance page.
  - Added itemlist view and oneitem view to format data for the Maintenance page.
  - Updated config/config.php to include link to Maintenance page.
+ - Added Roles controller to handle different user roles.
+ - Added constants 'Guest' and 'Owner' for user roles
+ - Updated _menubar view to include Roles dropdown menu
+ - Updated config/config.php and autoload.php so that user roles will work.
  - Added pagination in maintenance page.
  - Enabled task-completion in task list page.
 
