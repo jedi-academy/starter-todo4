@@ -3,7 +3,13 @@
 <form role="form" action="/mtce/submit" method="post">
     {ftask}
     {fpriority}
+    <!--job 11 -->
+    {size}
+    {group}
+    {status}
+    <!--done -->
     {zsubmit}
+
 </form>
 {error}
 <!-- 10.6 -->

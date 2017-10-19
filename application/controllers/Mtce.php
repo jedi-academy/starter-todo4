@@ -45,13 +45,20 @@ class Mtce extends Application {
             $fields = array(
                 'ftask'      => form_label('Task description') . form_input('task', $task->task),
                 'fpriority'  => form_label('Priority') . form_dropdown('priority', $this->app->priority(), $task->priority),
+                //job 11 start
+                'size' => form_label("Size") . form_dropdown('size', $this->app->size(), $task->size),
+                'group' => form_label("Group") . form_dropdown('group', $this ->app->group(), $task->group),
+                'status' => form_label("Status") . form_dropdown('status', $this->app->status(), $task->status),
+                //job 11 end
                 'zsubmit'    => form_submit('submit', 'Update the TODO task'),
+
             );
             $this->data = array_merge($this->data, $fields);
 
             $this->data['pagebody'] = 'itemedit';
             $this->render();
         }
+
 
     // handle form submission (10.5)
     public function submit()
