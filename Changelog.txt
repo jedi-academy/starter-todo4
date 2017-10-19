@@ -17,3 +17,5 @@ Repo: https://github.com/COMP4711Lab0-3/starter-todo4
 * added mtce controller and views
 
 * added user roles controller and added a dropdown on the navbar
+
+* added checkboxes on the page to mark completion
