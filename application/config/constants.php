@@ -88,3 +88,9 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
  * Constants related to application level files path
  */
 defined('DATAPATH') OR define('DATAPATH', '../data/'); //data file path
+
+/**
+ * Constants related to user roles.
+ */
+defined('ROLE_GUEST') OR define('ROLE_GUEST', 'Guest');
+defined('ROLE_OWNER') OR define('ROLE_OWNER', 'Owner');
