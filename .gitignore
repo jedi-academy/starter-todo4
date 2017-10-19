@@ -28,3 +28,7 @@ application/logs/*
 
 #Jetbrains IDE
 .idea/
+
+# tmp folder
+/tmp/
+
