@@ -16,6 +16,8 @@ All notable changes to this project will be documented in this file.
  - Added constants 'Guest' and 'Owner' for user roles
  - Updated _menubar view to include Roles dropdown menu
  - Updated config/config.php and autoload.php so that user roles will work.
+ - Added pagination in maintenance page.
+ - Enabled task-completion in task list page.
 
 ## [version 1.0.0 released] - 2017-10-12
 
