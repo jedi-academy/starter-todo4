@@ -8,7 +8,10 @@ All notable changes to this project will be documented in this file.
 # [latest version 1.0.0]
 
 ## [2.0.0] - 2017-10-19
- - Fixed Bootstrap bug
+ - Fixed Bootstrap bug.
+ - Added Mtce controller for Maintenance page.
+ - Added itemlist view and oneitem view to format data for the Maintenance page.
+ - Updated config/config.php to include link to Maintenance page.
 
 ## [version 1.0.0 released] - 2017-10-12
 
