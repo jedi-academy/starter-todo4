@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Maintenance controller target link in config.php
 - itemlist.php view fragment
+- oneitem.php view fragment
 - Mtce.php maintenance controller
 
 ### Changed

@@ -6,7 +6,7 @@
 class Mtce extends Application {
         /**
          * Displays the Maintenance landing page.
-         * Uses the itemlist.php view fragement to display all tasks.
+         * Uses the itemlist.php and oneitem.php view fragements to display all tasks.
          */
         public function index()
         {
@@ -18,12 +18,13 @@ class Mtce extends Application {
                         if (!empty($task->status))
                                 $task->status = $this->app->status($task->status);
 
-                // convert the array of task objects into an array of associative objects       
+                // build the task presentation output
+                $result = '';   // start with an empty array        
                 foreach ($tasks as $task)
-                        $converted[] = (array) $task;
+                        $result .= $this->parser->parse('oneitem',(array)$task,true);
 
                 // and then pass them on
-                $this->data['display_tasks'] = $converted;
+                $this->data['display_tasks'] = $result;
                 $this->data['pagebody'] = 'itemlist';
                 $this->render();
         }
