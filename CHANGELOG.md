@@ -12,6 +12,8 @@ All notable changes to this project will be documented in this file.
  - Added Mtce controller for Maintenance page.
  - Added itemlist view and oneitem view to format data for the Maintenance page.
  - Updated config/config.php to include link to Maintenance page.
+ - Added pagination in maintenance page.
+ - Enabled task-completion in task list page.
 
 ## [version 1.0.0 released] - 2017-10-12
 
