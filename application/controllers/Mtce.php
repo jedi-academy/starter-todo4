@@ -91,6 +91,9 @@ class Mtce extends Application
 	    $this->load->helper('form');
 	    $task = $this->session->userdata('task');
 	    $this->data['id'] = $task->id;
+	    $this->data['size'] = $task->size;
+	    $this->data['group'] = $task->group;
+	    $this->data['status'] = $task->status;
 
 	    // if no errors, pass an empty message
 	    if ( ! isset($this->data['error']))
