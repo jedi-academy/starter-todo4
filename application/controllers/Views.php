@@ -78,6 +78,8 @@ class Views extends Application
         public function makeCategorizedPanel() 
         {
             $parms = ['display_tasks' => $this->tasks->getCategorizedTasks()];
+            $role = $this->session->userdata('userrole');
+            $parms['completer'] = ($role == ROLE_OWNER) ? '/views/complete' : '#';
             return $this->parser->parse('by_category', $parms, true);
         }
         
