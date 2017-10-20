@@ -23,6 +23,7 @@ All notable changes to this project will be documented in this file.
  - Enabled task item maintenance.
  - Updated Mtce controller and itemedit view to include size, group and status fields.
  - Fixed bug in Memory_Model.php.
+ - Fixed category list checkbox in Views controller.
 
 ## [version 1.0.0 released] - 2017-10-12
 
