@@ -7,6 +7,8 @@ All notable changes to this project will be documented in this file.
 
 # [latest version 1.0.0]
 
+## [version 2.0.0 released] - 2017-10-20
+
 ## [2.0.0] - 2017-10-19
  - Fixed Bootstrap bug.
  - Added Mtce controller for Maintenance page.
