@@ -19,6 +19,8 @@ All notable changes to this project will be documented in this file.
  - Added pagination in maintenance page.
  - Enabled task-completion in task list page.
  - Updated maintenance page to enable role-specific list on it.
+ - Fixed model bug.
+ - Enabled task item maintenance.
 
 ## [version 1.0.0 released] - 2017-10-12
 
