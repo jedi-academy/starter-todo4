@@ -28,6 +28,10 @@ class Mtce extends Application {
         foreach ($tasks as $task) {
             if (!empty($task->status))
                 $task->status = $this->app->status($task->status);
+            if (!empty($task->group))
+                $task->group = $this->app->group($task->group);
+            if (!empty($task->size))
+                $task->size = $this->app->size($task->size);
             if ($role == ROLE_OWNER)
                 $result .= $this->parser->parse('oneitemx', (array) $task, true);
             else
@@ -63,6 +67,9 @@ class Mtce extends Application {
             'ftask' => form_label('Task description') . form_input('task', $task->task),
             'fpriority' => form_label('Priority') . form_dropdown('priority', $this->app->priority(), $task->priority),
             'zsubmit' => form_submit('submit', 'Update the TODO task'),
+            'fsize' => form_label('Size') . form_dropdown('size',$this->app->size(), $task->size),
+            'fgroup' => form_label('Group') . form_dropdown('group',$this->app->group(), $task->group),
+            'fstatus' => form_label('Status') . form_dropdown('status',$this->app->status(), $task->status),
         );
         $this->data = array_merge($this->data, $fields);
 
