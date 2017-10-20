@@ -21,6 +21,8 @@ All notable changes to this project will be documented in this file.
  - Updated maintenance page to enable role-specific list on it.
  - Fixed model bug.
  - Enabled task item maintenance.
+ - Updated Mtce controller and itemedit view to include size, group and status fields.
+ - Fixed bug in Memory_Model.php.
 
 ## [version 1.0.0 released] - 2017-10-12
 
