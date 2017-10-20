@@ -17,3 +17,18 @@ application/logs/*
 /vendor/
 /nbproject/private/
 /nbproject/
+
+.metadata
+
+#NetBeans
+/nbproject/
+
+#Mac Additional System Files
+.DS_Store
+
+#Jetbrains IDE
+.idea/
+
+# tmp folder
+/tmp/
+
