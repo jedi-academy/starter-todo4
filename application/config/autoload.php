@@ -134,3 +134,5 @@ $autoload['language'] = array();
 */
 $autoload['model'] = array('app', 'tasks');
 
+$autoload['libraries'] = array('parser', 'parsedown','session');
+
