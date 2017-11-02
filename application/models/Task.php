@@ -16,60 +16,57 @@ class Task extends Entity {
 
     public function setId($value) {
         if($value < 0) {
-            throw new Exception("Garbage, no negative Id's allowed");
+            return false;
         }
         $this->id = $value;
+        return true;
     }
 
     public function setTask($value) {
-        if(!ctype_alpha(str_replace(' ', '', $value))) {
-            throw new Exception("Garbage, only spaces and alphanumeric characters allowed");
+        if(!ctype_alpha(str_replace(' ', '', $value)) || strlen($value) >= 64) {
+            return false;
         }
-        if(strlen($value) >= 64) {
-            throw new Exception("Garbage, only 64 characters max!");
-        }
+
         $this->task = $value;
+        return true;
     }
 
     public function setPriority($value) {
-        if(!is_numeric($value)) {
-            throw new Exception("Garbage, only integers allowed!");
-        }
-        if($value >= 4) {
-            throw new Exception("Garbage, only a priority of less than 4 allowed");
+        if(!is_numeric($value) || $value >= 4) {
+            return false;
         }
         $this->priority = $value;
+        return true;
     }
 
     public function setSize($value) {
-        if(!is_numeric($value)) {
-            throw new Exception("Garbage, only integers allowed!");
-        }
-        if($value >= 4) {
-            throw new Exception("Garbage, only a size of less than 4 allowed");
+        if(!is_numeric($value) || $value >= 4) {
+            return false;
         }
         $this->size = $value;
+        return true;
     }
 
     public function setGroup($value) {
-        if(!is_numeric($value)) {
-            throw new Exception("Garbage, only integers allowed!");
-        }
-        if($value >= 5) {
-            throw new Exception("Garbage, only a group of less than 5 allowed");
+        if(!is_numeric($value) || $value >= 5) {
+            return false;
         }
         $this->group = $value;
+        return true;
     }
 
     public function setDeadline($value) {
         $this->deadline = $value;
+        return true;
     }
 
     public function setStatus($value) {
         $this->status = $value;
+        return true;
     }
 
     public function setFlag($value) {
         $this->flag = $value;
+        return true;
     }
 }
