@@ -37,6 +37,7 @@ class TaskTest extends PHPUnit\Framework\TestCase
     private $task;
     private $inputs;
     private $failures;
+    private $countPass;
 
     public function setUp()
     {
@@ -46,6 +47,7 @@ class TaskTest extends PHPUnit\Framework\TestCase
         $this->CI =& get_instance();
         $this->task = new $this->CI->task;
         $this->failures = array();
+        $this->countPass = 0;
 
         if (isset($this->CI)) {
             $this->task = new $this->CI->task;
@@ -77,12 +79,14 @@ class TaskTest extends PHPUnit\Framework\TestCase
         foreach ($this->task as $attr => $val) {
             echo PHP_EOL;
             echo '~'.strtoupper($attr).'~';
+            $attrStr = 'set'.ucfirst($attr); //name of the set fn
             echo PHP_EOL;
-
+            $ignore = array('deadline', 'status', 'flag');
+            if(!(strcmp($attr,$ignore[0]) && strcmp($attr,$ignore[1]) && strcmp($attr,$ignore[2])))
+                    continue;
             foreach ($this->inputs as $input => $affrm) {
                 $isAcceptable = 1;
                 try {
-                    $attrStr = 'set'.ucfirst($attr); //name of the set fn
                     $this->assertEquals(true, $this->task->$attrStr($input), "Description: $affrm\n");
                 } catch (PHPUnit\Framework\ExpectationFailedException $e) {
                     array_push($this->failures,"Failed! : \nInput: $input\nFunction : $attrStr\n".$e->getMessage().PHP_EOL);
@@ -90,6 +94,7 @@ class TaskTest extends PHPUnit\Framework\TestCase
                 }
                 if($isAcceptable) {
                     echo PHP_EOL;
+                    $this->countPass++;
                     echo "Passed! : \nInput: $input\nFunction : $attrStr \nDescription: $affrm" . PHP_EOL;
                 }
             }
@@ -99,7 +104,8 @@ class TaskTest extends PHPUnit\Framework\TestCase
         if(!empty($this->failures))
         {
             throw new PHPUnit\Framework\ExpectationFailedException(
-                "_______________FAILURES_________________\n\t".implode("\n\t", $this->failures)."\n\t". count($this->failures)." assertions failed!"
+                "_______________FAILURES_________________\n\t".implode("\n\t", $this->failures)."\n\t". count($this->failures)." assertions failed!\n!\n"
+                    ."\t$this->countPass assertions Passed!\n!\n"
             );
         }
     }
