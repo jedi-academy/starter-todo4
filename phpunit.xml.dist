@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit
-        colors="true"
+        colors="never"
         stopOnFailure="false"
         backupGlobals="false"
         backupStaticAttributes="false"
-        convertErrorsToExceptions="true"
-        convertNoticesToExceptions="true"
-        convertWarningsToExceptions="true"
+        convertErrorsToExceptions="false"
+        convertNoticesToExceptions="false"
+        convertWarningsToExceptions="false"
         processIsolation="false"
         syntaxCheck="false"
         cacheTokens="true"
         verbose="false"
+        columnsMax="true"
+        loader="CITools Test Suite"
         bootstrap="./tests/Bootstrap.php">
     <testsuites>
         <testsuite name="CITools Test Suite">
