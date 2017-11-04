@@ -11,7 +11,7 @@ class Task extends Entity {
 
     //id,task,priority,size,group,deadline,status,flag
     public function __construct(){
-
+        parent::__construct();
     }
 
     public function setId($value) {

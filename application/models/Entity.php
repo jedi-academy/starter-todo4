@@ -1,6 +1,11 @@
 <?php
 class Entity extends CI_Model {
 
+    function __construct()
+    {
+        parent::__construct();
+    }
+
     // If this class has a setProp method, use it, else modify the property directly
     public function __set($key, $value) {
         // if a set* method exists for this key, 
