@@ -11,7 +11,7 @@
     processIsolation="false"
     syntaxCheck="false"
     cacheTokens="true"
-    verbose="false"
+    verbose="true"
     bootstrap="tests/Bootstrap.php">
     <testsuites>
         <testsuite name="CITools Test Suite">
