@@ -14,17 +14,22 @@ class TaskTest extends PHPUnit\Framework\TestCase
     {
         // Load CI instance normally
         $this->CI =& get_instance();
+        $this->task = new $this->CI->task;
 
-        $this->CI->load('task');
+        if (isset($this->CI)) {
+            $this->task = new $this->CI->task;
+        }else{
+            var_dump("no task");
+        }
 
-        var_dump($this->CI->task);
+        var_dump($this->task);
 
     }
     public function testTaskSetMethods()
     {
         $task = $this->task;
         //exactly 64 chars desc
-        $this->assertEquals(true, $this->CI->input->task->setTask('fV2MxxW36p7WX0bpCqr6yrJGSkhpMO1tqQudj6nOPjbfay7fJqhU9kUWyNuUEK6x'), "able to set 64 chacters?");
+        $this->assertEquals(true, $task->set='fV2MxxW36p7WX0bpCqr6yrJGSkhpMO1tqQudj6nOPjbfay7fJqhU9kUWyNuUEK6x', "able to set 64 chacters?");
         /*
         //exactly 63
         $this->assertEquals(true, $this->task='uyVCPdX6AU1kTo4EWyfup0ElEm8kqaKdh0vhDzskRFkjf5kdsDpwp0D8buYQvZ7',"able to set 63 chars?");
