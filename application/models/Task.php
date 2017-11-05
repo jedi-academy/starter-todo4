@@ -1,6 +1,6 @@
 <?php
 class Task extends Entity {
-    protected   $id,
+    public   $id,
                 $task,
                 $priority,
                 $size,
@@ -11,7 +11,7 @@ class Task extends Entity {
 
     //id,task,priority,size,group,deadline,status,flag
     public function __construct(){
-
+        parent::__construct();
     }
 
     public function setId($value) {
@@ -55,6 +55,7 @@ class Task extends Entity {
         return true;
     }
 
+    //
     public function setDeadline($value) {
         $this->deadline = $value;
         return true;

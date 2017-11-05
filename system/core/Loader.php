@@ -330,7 +330,7 @@ class CI_Loader {
 					continue;
 				}
 
-				require_once($mod_path.'models/'.$path.$model.'.php');
+                require_once($mod_path.'models/'.$path.$model.'.php');
 				if ( ! class_exists($model, FALSE))
 				{
 					throw new RuntimeException($mod_path."models/".$path.$model.".php exists, but doesn't declare class ".$model);
@@ -1358,6 +1358,7 @@ class CI_Loader {
 		// Autoload models
 		if (isset($autoload['model']))
 		{
+		    //var_dump($autoload['model']);
 			$this->model($autoload['model']);
 		}
 	}

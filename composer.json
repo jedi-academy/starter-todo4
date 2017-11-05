@@ -1,0 +1,8 @@
+{
+    "name": "brynbeaudry/lab5",
+    "require": {
+        "phpunit/phpunit": "^6.4"
+    },
+    "require-dev": {
+    }
+}
