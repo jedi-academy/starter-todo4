@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+##[2.0.0] - 2017-11-2
+### Added
+- Entity class to `/application/core/`
+- Task class to `/application/models/`
+- copy of `/public/index.php` to `/tests/` renamed to `Bootstrap.php`
+
+### Changed
+- README to reflect update to lab 7
+- `$autoload['model']` includes 'task'
+
 ##[1.7.0] - 2017-10-19
 ###Added
 - made three more inputs on itemedit.php
