@@ -18,15 +18,16 @@ class Task extends Entity {
 
 	public function __setTask($value)
 	{
-		if(!ctype_alnum(str_replace(' ', '', $value)))
+		if(!ctype_alpha(str_replace(' ', '', $value)))
 		{
-            throw new Exception("Task contains invalid characters", 1);
+            return false;
         }
 		if(strlen($value) > 64)
         {
-            throw new Exception("Task exceeds max length", 1);
+            return false;
 		}
 		$this -> task = $value;
+		return true;
 	}
 
 	/**
@@ -36,13 +37,14 @@ class Task extends Entity {
 	{
 		if(!is_int($value))
 		{
-			throw new Exception("Priority must be an integer", 1);
+			return false;
 		}
 		if($value < 1 || $value > 4)
 		{
-			throw new Exception("Priority must be between 1 and 4", 1);
+			return false;
 		}
 		$this -> priority = $value;
+		return true;
 	}
 
 	/**
@@ -52,29 +54,31 @@ class Task extends Entity {
 	{
 		if(!is_int($value))
 		{
-			throw new Exception("Size must be an integer", 1);
+			return false;
 		}
 		if($value < 1 || $value > 4)
 		{
-			throw new Exception("Size must be between 1 and 4", 1);
+			return false;
 		}
 		$this -> size = $value;
+		return true;
 	}
 
 	/**
 	 * Evaluates and sets the Group property
 	 */
-	public function __setGroup() 
+	public function __setGroup($value)
 	{
 		if(!is_int($value))
 		{
-			throw new Exception("Group must be an integer", 1);
+			return false;
 		}
 		if($value < 1 || $value > 5)
 		{
-			throw new Exception("Group must be between 1 and 5", 1);
+			return false;
 		}
 		$this -> group = $value;
+		return true;
 	}
 
     public function getTask() {
