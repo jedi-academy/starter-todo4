@@ -5,11 +5,12 @@
  * Date: 2017-11-02
  * Time: 2:03 PM
  */
+if (! class_exists('PHPUnit_Framework_TestCase')) {
+    class_alias('PHPUnit\Framework\TestCase', 'PHPUnit_Framework_TestCase');
+}
 
-class TaskTest extends PHPUnit\Framework\TestCase
+class TaskTest extends PHPUnit_Framework_TestCase
 {
-    private $CI;
-
     /**
      * @bbeau
      *
@@ -31,86 +32,60 @@ class TaskTest extends PHPUnit\Framework\TestCase
      *
      */
 
-
-    private $GLOBALS = array();
+    /**
+     * run with phpunit --bootstrap src/Task.php tests/TaskTest
+     */
 
     private $task;
-    private $inputs;
-    private $failures;
-    private $countPass;
+    private $CI;
 
     public function setUp()
     {
-
-
         // Load CI instance normally
-        $this->CI =& get_instance();
-        $this->task = new $this->CI->task;
-        $this->failures = array();
-        $this->countPass = 0;
-
-        if (isset($this->CI)) {
-            $this->task = new $this->CI->task;
-        } else {
-            print_r("no task");
-        }
-        print_r($this->task);
-
-        $this->inputs = array(
-            'fV2MxxW36p7WX0bpCqr6yrJGSkhpMO1tqQudj6nOPjbfay7fJqhU9kUWyNuUEK6x' => "64 Characters && Length < 64",
-            'uyVCPdX6AU1kTo4EWyfup0ElEm8kqaKdh0vhDzskRFkjf5kdsDpwp0D8buYQvZ7' => "63 Characters && Length < 64",
-            'fV2MxxW36p7WX0bpCqr6yrJGSkhpMO1tqQudj6nOPjbfay7fJqhU9kUWyNuUEK6     ' => "63 Characters and +2 Whitespace && Length < 64 : Sanitizes whtspc",
-            'abc' => "Alphabet Characters",
-            123 => "Numbers",
-            3 => '3 @ < 4',
-            4 => '4 @ < 4',
-            -1 => 'Negative Number',
-        );
-
-        $this->testTaskSetMethods();
-
-        echo "FINISHED, all good";
+        $this->CI   = &get_instance();
+        $this->task = new Task;
     }
-
-
-
-    public function testTaskSetMethods()
+    public function testSetId()
     {
-        foreach ($this->task as $attr => $val) {
-            echo PHP_EOL;
-            echo '~'.strtoupper($attr).'~';
-            $attrStr = 'set'.ucfirst($attr); //name of the set fn
-            echo PHP_EOL;
-            $ignore = array('deadline', 'status', 'flag');
-            if(!(strcmp($attr,$ignore[0]) && strcmp($attr,$ignore[1]) && strcmp($attr,$ignore[2])))
-                    continue;
-            foreach ($this->inputs as $input => $affrm) {
-                $isAcceptable = 1;
-                try {
-                    $this->assertEquals(true, $this->task->$attrStr($input), "Description: $affrm\n");
-                } catch (PHPUnit\Framework\ExpectationFailedException $e) {
-                    array_push($this->failures,"Failed! : \nInput: $input\nFunction : $attrStr\n".$e->getMessage().PHP_EOL);
-                    $isAcceptable = 0;
-                }
-                if($isAcceptable) {
-                    echo PHP_EOL;
-                    $this->countPass++;
-                    echo "Passed! : \nInput: $input\nFunction : $attrStr \nDescription: $affrm" . PHP_EOL;
-                }
-            }
-            echo PHP_EOL;
-        }
-        echo PHP_EOL;
-        if(!empty($this->failures))
-        {
-            throw new PHPUnit\Framework\ExpectationFailedException(
-                "_______________FAILURES_________________\n\t".implode("\n\t", $this->failures)."\n\t". count($this->failures)." assertions failed!\n!\n"
-                    ."\t$this->countPass assertions Passed!\n!\n"
-            );
-        }
+        $this->task->Id = -1;
+        $this->assertEquals(false, $this->task->Id);
+
+        $this->task->Id = 2;
+        $this->assertEquals(true, $this->task->id);
     }
+    public function testSetTask()
+    {
+        $this->task->Task = "fV2MxxW36p7WX0bpCqr6yrJGSkhpMO1tqQudj6nOPjbfasdfsdfay7fJqhU9kUWyNuUEK";
+        $this->assertEquals(false, $this->task->Task);
 
-
-
-
+        $this->task->Task = "Blah blah blah";
+        $this->assertEquals("Blah blah blah", $this->task->Task);
+    }
+    public function testSetPriority()
+    {
+        $this->task->Priority = "Making sure its a number";
+        $this->assertEquals(false, $this->task->priority);
+        $this->task->Priority = 5;
+        $this->assertEquals(false, $this->task->priority);
+        $this->task->Priority = 3;
+        $this->assertEquals(true, $this->task->priority);
+    }
+    public function testSetSize()
+    {
+        $this->task->Size = "Making sure its a number";
+        $this->assertEquals(false, $this->task->size);
+        $this->task->Size = 5;
+        $this->assertEquals(false, $this->task->size);
+        $this->task->Size = 3;
+        $this->assertEquals(true, $this->task->size);
+    }
+    public function testSetGroup()
+    {
+        $this->task->Group = "Making sure its a number";
+        $this->assertEquals(false, $this->task->group);
+        $this->task->Group = 6;
+        $this->assertEquals(false, $this->task->group);
+        $this->task->Group = 4;
+        $this->assertEquals(true, $this->task->group);
+    }
 }
