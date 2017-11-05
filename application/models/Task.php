@@ -2,20 +2,29 @@
 /**
  * Implements magic setter methods for each property of the Tasks model 
  */
+
+require_once APPPATH . 'core/Entity.php';
+
 class Task extends Entity {
 
 	/**
 	 * Evaluates and sets the Task property
 	 */
-	public function __setTask($value) 
+
+	private $task;
+    private $priority;
+    private $size;
+    private $group;
+
+	public function __setTask($value)
 	{
 		if(!ctype_alnum(str_replace(' ', '', $value)))
 		{
-			throw new Exception("Task contains invalid characters", 1);
-		}
+            throw new Exception("Task contains invalid characters", 1);
+        }
 		if(strlen($value) > 64)
-		{
-			throw new Exception("Task exceeds max length", 1);
+        {
+            throw new Exception("Task exceeds max length", 1);
 		}
 		$this -> task = $value;
 	}
@@ -33,7 +42,7 @@ class Task extends Entity {
 		{
 			throw new Exception("Priority must be between 1 and 4", 1);
 		}
-		$this -> task = $value;
+		$this -> priority = $value;
 	}
 
 	/**
@@ -49,7 +58,7 @@ class Task extends Entity {
 		{
 			throw new Exception("Size must be between 1 and 4", 1);
 		}
-		$this -> task = $value;
+		$this -> size = $value;
 	}
 
 	/**
@@ -65,6 +74,23 @@ class Task extends Entity {
 		{
 			throw new Exception("Group must be between 1 and 5", 1);
 		}
-		$this -> task = $value;
+		$this -> group = $value;
 	}
+
+    public function getTask() {
+        return $this->task;
+    }
+
+    public function getPriority() {
+        return $this->priority;
+    }
+
+    public function getSize() {
+        return $this->size;
+    }
+
+    public function getGroup() {
+        return $this->group;
+    }
+
 } 
