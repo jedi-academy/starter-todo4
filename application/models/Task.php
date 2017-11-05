@@ -1,6 +1,9 @@
 <?php
+
+require_once "Entity.php";
+
 class Task extends Entity {
-    public   $id,
+    public      $id,
                 $task,
                 $priority,
                 $size,
@@ -26,7 +29,6 @@ class Task extends Entity {
         if(!ctype_alpha(str_replace(' ', '', $value)) || strlen($value) >= 64) {
             return false;
         }
-
         $this->task = $value;
         return true;
     }
