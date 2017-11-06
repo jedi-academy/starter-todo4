@@ -17,12 +17,12 @@ class TaskTest extends PHPUnit_Framework_TestCase {
     public function testSetValid() 
     {
         $task = $this->task->setTask("Do stuff");
-        $size = $this->task->setSize(10);
+        $size = $this->task->setSize(1);
         $priority = $this->task->setPriority(1);
         $group = $this->task->setGroup(2);
         
         $this->assertEquals("Do stuff", $task);
-        $this->assertEquals(10, $size);
+        $this->assertEquals(1, $size);
         $this->assertEquals(1, $priority);
         $this->assertEquals(2, $group);
     }
