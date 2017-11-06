@@ -52,19 +52,19 @@ class TaskTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(false, $this->task->id, "Can't set negative numbers");
 
         $this->task->Id = 2;
-        $this->assertEquals(true, $this->task->id, "Can set positive numbers");
+        $this->assertEquals(2, $this->task->id, "Can set positive numbers");
     }
     public function testSetTask()
     {
         $this->task->Task = "fVMxxWcfgdhfgpWXbpCqryrJGSkhpMdfbfbtqQudjdfbdnOPjbfasdfsdfaydfbfJqhUkUWyNuUEK";
-        var_dump($this->task);
+        //var_dump($this->task);
         $this->assertEquals(false,
             $this->task->task,
             "Can't set 69 characters, or over 63 characters");
 
         $this->task->Task = "blah blah blah";
-        var_dump($this->task);
-        $this->assertEquals(true,
+        //var_dump($this->task);
+        $this->assertEquals("blah blah blah",
             $this->task->task,
             "Can set spaces in the description");
     }
@@ -73,26 +73,26 @@ class TaskTest extends PHPUnit_Framework_TestCase
         $this->task->Priority = "Making sure its a number";
         $this->assertEquals(false, $this->task->priority, "Must be numeric");
         $this->task->Priority = 5;
-        $this->assertEquals(false, $this->task->priority, "Must be numeric and >=4");
+        $this->assertEquals(false, $this->task->priority, "Must be numeric and <=4");
         $this->task->Priority = 3;
-        $this->assertEquals(true, $this->task->priority, "Must be numeric and >=4");
+        $this->assertEquals(3, $this->task->priority, "Must be numeric and <=4");
     }
     public function testSetSize()
     {
         $this->task->Size = "Making sure its a number";
         $this->assertEquals(false, $this->task->size, "Must be numeric");
         $this->task->Size = 5;
-        $this->assertEquals(false, $this->task->size, "Must be numeric and >=4");
+        $this->assertEquals(false, $this->task->size, "Must be numeric and <=4");
         $this->task->Size = 3;
-        $this->assertEquals(true, $this->task->size, "Must be numeric and >=4");
+        $this->assertEquals(3, $this->task->size, "Must be numeric and <=4");
     }
     public function testSetGroup()
     {
         $this->task->Group = "Making sure its a number";
         $this->assertEquals(false, $this->task->group, "Must be numeric");
         $this->task->Group = 6;
-        $this->assertEquals(false, $this->task->group,"Must be numeric and >=5");
+        $this->assertEquals(false, $this->task->group,"Must be numeric and <=5");
         $this->task->Group = 4;
-        $this->assertEquals(true, $this->task->group, "\"Must be numeric and >=5");
+        $this->assertEquals(4, $this->task->group, "\"Must be numeric and <=5");
     }
 }
