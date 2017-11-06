@@ -3,7 +3,7 @@
 require_once "Entity.php";
 
 class Task extends Entity {
-    public      $id,
+    public   $id,
                 $task,
                 $priority,
                 $size,
@@ -26,7 +26,13 @@ class Task extends Entity {
     }
 
     public function setTask($value) {
-        if(!ctype_alpha(str_replace(' ', '', $value)) || strlen($value) >= 64) {
+        $value = str_replace(" ", "", $value);
+        echo "$value";
+        if(!ctype_alpha($value)) {
+            echo "Fail $value";
+            return false;
+        }else if(strlen($value) >= 64){
+            echo "Fail $value";
             return false;
         }
         $this->task = $value;
