@@ -23,21 +23,21 @@ class Task extends Entity {
    
    public function setPriority($value)
    {
-       if (is_int($value))
+       if (is_int($value) && $value <= 3 && $value > 0)
            $this->priority = $value;
        return $this->priority;
    }
    
    public function setSize($value)
    {
-       if (is_int($value))
+       if (is_int($value) && $value <= 3 && $value > 0)
            $this->size = $value;
        return $this->size;
    }
    
    public function setGroup($value)
    {
-       if (is_int($value))
+       if (is_int($value) && $value <= 4 && $value > 0)
            $this->group = $value;
        return $this->group;
    }
