@@ -3,7 +3,7 @@
 require_once "Entity.php";
 
 class Task extends Entity {
-    public      $id,
+    public   $id,
                 $task,
                 $priority,
                 $size,
@@ -19,6 +19,7 @@ class Task extends Entity {
 
     public function setId($value) {
         if($value < 0) {
+            $this->id = false;
             return false;
         }
         $this->id = $value;
@@ -26,7 +27,13 @@ class Task extends Entity {
     }
 
     public function setTask($value) {
-        if(!ctype_alpha(str_replace(' ', '', $value)) || strlen($value) >= 64) {
+        $copy = str_replace(" ", "", $value);
+        if(!ctype_alpha($copy)) {
+            $this->task = false;
+            return false;
+        }
+        if((strlen($copy) >= 64)){
+            $this->task = false;
             return false;
         }
         $this->task = $value;
@@ -35,6 +42,7 @@ class Task extends Entity {
 
     public function setPriority($value) {
         if(!is_numeric($value) || $value >= 4) {
+            $this->priority = false;
             return false;
         }
         $this->priority = $value;
@@ -43,6 +51,7 @@ class Task extends Entity {
 
     public function setSize($value) {
         if(!is_numeric($value) || $value >= 4) {
+            $this->size = false;
             return false;
         }
         $this->size = $value;
@@ -51,6 +60,7 @@ class Task extends Entity {
 
     public function setGroup($value) {
         if(!is_numeric($value) || $value >= 5) {
+            $this->group=false;
             return false;
         }
         $this->group = $value;

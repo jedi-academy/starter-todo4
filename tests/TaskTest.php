@@ -43,49 +43,56 @@ class TaskTest extends PHPUnit_Framework_TestCase
     {
         // Load CI instance normally
         $this->CI   = &get_instance();
-        $this->task = new Task;
+        $this->task = new $this->CI->task;
+        //var_dump($this->task);
     }
     public function testSetId()
     {
         $this->task->Id = -1;
-        $this->assertEquals(false, $this->task->Id);
+        $this->assertEquals(false, $this->task->id, "Can't set negative numbers");
 
         $this->task->Id = 2;
-        $this->assertEquals(true, $this->task->id);
+        $this->assertEquals(2, $this->task->id, "Can set positive numbers");
     }
     public function testSetTask()
     {
-        $this->task->Task = "fV2MxxW36p7WX0bpCqr6yrJGSkhpMO1tqQudj6nOPjbfasdfsdfay7fJqhU9kUWyNuUEK";
-        $this->assertEquals(false, $this->task->Task);
+        $this->task->Task = "fVMxxWcfgdhfgpWXbpCqryrJGSkhpMdfbfbtqQudjdfbdnOPjbfasdfsdfaydfbfJqhUkUWyNuUEK";
+        //var_dump($this->task);
+        $this->assertEquals(false,
+            $this->task->task,
+            "Can't set 69 characters, or over 63 characters");
 
-        $this->task->Task = "Blah blah blah";
-        $this->assertEquals("Blah blah blah", $this->task->Task);
+        $this->task->Task = "blah blah blah";
+        //var_dump($this->task);
+        $this->assertEquals("blah blah blah",
+            $this->task->task,
+            "Can set spaces in the description");
     }
     public function testSetPriority()
     {
         $this->task->Priority = "Making sure its a number";
-        $this->assertEquals(false, $this->task->priority);
+        $this->assertEquals(false, $this->task->priority, "Must be numeric");
         $this->task->Priority = 5;
-        $this->assertEquals(false, $this->task->priority);
+        $this->assertEquals(false, $this->task->priority, "Must be numeric and <=4");
         $this->task->Priority = 3;
-        $this->assertEquals(true, $this->task->priority);
+        $this->assertEquals(3, $this->task->priority, "Must be numeric and <=4");
     }
     public function testSetSize()
     {
         $this->task->Size = "Making sure its a number";
-        $this->assertEquals(false, $this->task->size);
+        $this->assertEquals(false, $this->task->size, "Must be numeric");
         $this->task->Size = 5;
-        $this->assertEquals(false, $this->task->size);
+        $this->assertEquals(false, $this->task->size, "Must be numeric and <=4");
         $this->task->Size = 3;
-        $this->assertEquals(true, $this->task->size);
+        $this->assertEquals(3, $this->task->size, "Must be numeric and <=4");
     }
     public function testSetGroup()
     {
         $this->task->Group = "Making sure its a number";
-        $this->assertEquals(false, $this->task->group);
+        $this->assertEquals(false, $this->task->group, "Must be numeric");
         $this->task->Group = 6;
-        $this->assertEquals(false, $this->task->group);
+        $this->assertEquals(false, $this->task->group,"Must be numeric and <=5");
         $this->task->Group = 4;
-        $this->assertEquals(true, $this->task->group);
+        $this->assertEquals(4, $this->task->group, "\"Must be numeric and <=5");
     }
 }
