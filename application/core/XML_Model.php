@@ -67,4 +67,37 @@ class XML_Model extends Memory_Model{
         $this->reindex();
     }
 
+    /**
+     * Store the collection state appropriately, depending on persistence choice.
+     * OVER-RIDE THIS METHOD in persistence choice implementations
+     */
+    protected function store()
+    {
+        // rebuild the keys table
+        $this->reindex();
+        //---------------------
+        if(file_exists($this->_origin))
+        {
+            $xml = new DOMDocument();
+            $xml->preserveWhiteSpace = false;
+            $xml->formatOutput       = true;
+            $xml_data = $xml->createElement(get_class($this));
+
+            foreach($this->_data as $key => $record)
+            {
+                $xml_task  = $xml->createElement("task");
+                $record_array = (array) $record;
+
+                foreach($record as $field => $value)
+                {
+                    $xml_row = $xml->createElement($field, htmlspecialchars($value));
+                    $xml_task->appendChild($xml_row);
+                }
+                $xml_data->appendChild($xml_task);
+            }
+            $xml->appendChild($xml_data);
+            $xml->save($this->_origin);
+        }
+        // --------------------
+    }
 }
