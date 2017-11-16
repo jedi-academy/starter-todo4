@@ -1,20 +1,16 @@
 <?php
 
 /**
- * CSV-persisted collection.
- * 
- * @author		JLP
- * @copyright           Copyright (c) 2010-2017, James L. Parry
- * ------------------------------------------------------------------------
+ * XML_Model.
+ * A model for accessing XML.
+ *
+ * @author Andrew
  */
-class CSV_Model extends Memory_Model {
-//---------------------------------------------------------------------------
-//  Housekeeping methods
-//---------------------------------------------------------------------------
+class XML_Model extends Memory_Model {
 
     /**
      * Constructor.
-     * @param string $origin Filename of the CSV file
+     * @param string $origin Filename of the XML file
      * @param string $keyfield  Name of the primary key field
      * @param string $entity	Entity name meaningful to the persistence
      */
@@ -43,28 +39,10 @@ class CSV_Model extends Memory_Model {
      * OVER-RIDE THIS METHOD in persistence choice implementations
      */
     protected function load() {
-        //---------------------
-        if (($handle = fopen($this->_origin, "r")) !== FALSE) {
-            $first = true;
-            while (($data = fgetcsv($handle)) !== FALSE) {
-                if ($first) {
-                    // populate field names from first row
-                    $this->_fields = $data;
-                    $first = false;
-                } else {
-                    // build object from a row
-                    $record = new stdClass();
-                    for ($i = 0; $i < count($this->_fields); $i ++)
-                        $record->{$this->_fields[$i]} = $data[$i];
-                    $key = $record->{$this->_keyfield};
-                    $this->_data[$key] = $record;
-                }
-            }
-            fclose($handle);
+        $xml = simplexml_load_file($this->_origin);
+        foreach($xml->children() as $child) {
+            foreach($child->attributes() as $key => $value);
         }
-        // --------------------
-        // rebuild the keys table
-        $this->reindex();
     }
 
     /**
@@ -81,7 +59,6 @@ class CSV_Model extends Memory_Model {
                 fputcsv($handle, array_values((array) $record));
             fclose($handle);
         }
-        // --------------------
     }
 
 }
