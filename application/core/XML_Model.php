@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__.'/../models/Task.php';
+
 /**
  * XML_Model.
  * A model for accessing XML.
@@ -40,10 +42,32 @@ class XML_Model extends Memory_Model {
      */
     protected function load() {
         $xml = simplexml_load_file($this->_origin);
-        foreach($xml->children() as $child) {
-            foreach($child->attributes() as $key => $value);
+        
+        foreach ($xml->children() as $child) {
+            $attributes = $child->attributes();
+
+            $record = new stdClass();
+            $record->{"priority"} = $this->validate(intval($attributes['priority']));
+            $record->{"size"} = $this->validate(intval($attributes['size']));
+            $record->{"group"} = $this->validate(intval($attributes['group']));
+            $record->{"deadline"} = $attributes['deadline'];
+            $record->{"status"} = $this->validate(intval($attributes['status']));
+            $record->{"flag"} = $this->validate(intval($attributes['flag']));
+            $record->{"id"} = $this->validate(intval($attributes['id']));
+            $record->{"task"} = (string) $child;
+            
+            $key = $record->id;
+            $this->_data[$key] = $record;
         }
     }
+    
+    private function validate($num)
+    {
+        if ($num == 0)
+            return '';
+        return $num;
+    }
+    
 
     /**
      * Store the collection state appropriately, depending on persistence choice.
