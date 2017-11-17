@@ -59,30 +59,26 @@ class XML_Model extends Memory_Model {
             $key = $record->id;
             $this->_data[$key] = $record;
         }
+        foreach((array)$record as $key=>$val)
+            $this->_fields[] = $key;
+        
+        $this->reindex();
     }
-    
-    private function validate($num)
-    {
-        if ($num == 0)
-            return '';
-        return $num;
-    }
-    
 
     /**
      * Store the collection state appropriately, depending on persistence choice.
      * OVER-RIDE THIS METHOD in persistence choice implementations
      */
     protected function store() {
-        // rebuild the keys table
-        $this->reindex();
-        //---------------------
-        if (($handle = fopen($this->_origin, "w")) !== FALSE) {
-            fputcsv($handle, $this->_fields);
-            foreach ($this->_data as $key => $record)
-                fputcsv($handle, array_values((array) $record));
-            fclose($handle);
-        }
+        
+      //  $xml = new SimpleXMLElement($this->_data);
+       // $xml -> asXML($this->_origin);
     }
-
+        
+    private function validate($num)
+    {
+        if ($num == 0)
+            return '';
+        return $num;
+    }
 }
