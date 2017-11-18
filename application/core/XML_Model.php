@@ -70,9 +70,18 @@ class XML_Model extends Memory_Model {
      * OVER-RIDE THIS METHOD in persistence choice implementations
      */
     protected function store() {
+        $xmlstr = '<?xml version="1.0" encoding="UTF-8"?> <tasks></tasks>';
+        $xml = new SimpleXMLElement($xmlstr);
         
-      //  $xml = new SimpleXMLElement($this->_data);
-       // $xml -> asXML($this->_origin);
+        foreach($this->_data as $id=>$object){
+            $xmlelem = $xml->addChild('task', $object->task);
+            foreach((array)$object as $field=>$contents){
+            if (!($field === "task" || $field === "submit")) {
+                    $xmlelem->addAttribute($field, $contents);
+                }
+            }
+        }
+        $xml -> asXML($this->_origin);
     }
         
     private function validate($num)
