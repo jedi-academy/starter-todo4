@@ -5,7 +5,7 @@
     {fsize}
     {fgroup}
     {fstatus}
-    {zsubmit}
+    <input type="submit" value="Update the TODO task"/>
 </form>
 {error}
 
