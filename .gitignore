@@ -16,4 +16,11 @@ application/logs/*
 !application/logs/.htaccess
 /vendor/
 /nbproject/private/
+
+#phpstorm
+.idea
+/tmp
+.DS_Store
+
+/tests/reports
 /nbproject/
