@@ -47,18 +47,9 @@ class XML_Model extends Memory_Model
 	protected function load()
 	{
         if(file_exists($this->_origin)) {
-            $first = true;
             $data = simplexml_load_file($this->_origin);
             foreach ($data->children() as $item)
             {
-/*                if ($first)
-                {
-                    // populate field names from item children
-                    foreach($item->attributes() as $key => $value) {
-                        array_push($this->_fields, $key);
-                    }
-                    $first = false;
-                }*/
                 // build object from a row
                 $record = new stdClass();
                 foreach($item->attributes() as $key => $value) {
