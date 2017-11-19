@@ -12,15 +12,6 @@ class XML_Model extends Memory_Model
 //---------------------------------------------------------------------------
 //  Housekeeping methods
 //---------------------------------------------------------------------------
-		protected $xml = null;
-		protected $id = str();
-		protected $priority = str();
-		protected $task = str();
-		protected $size = str();
-		protected $group = str();
-		protected $deadline = str();
-		protected $status = str();
-		protected $flag = str();
 	/**
 	 * Constructor.
 	 * @param string $origin Filename of the XML file
@@ -37,11 +28,10 @@ class XML_Model extends Memory_Model
 		else
 			$this->_origin = $origin;
 
-		$this->xml = simplexml_load_file($this->_origin);
-
 		// remember the other constructor fields
 		$this->_keyfield = $keyfield;
 		$this->_entity = $entity;
+		$this->_fields = array();
 		
 
 		// start with an empty collection
@@ -56,21 +46,23 @@ class XML_Model extends Memory_Model
 	 */
 	protected function load()
 	{
-		//---------------------
-		foreach ($this->xml->task as $task => $desc) {
-			// build object from a row
-			$record = new stdClass();
-			foreach ($task->atttibutes() as $key => $value) {
-				$record->$$key = $value;
-			}
-				$record->$task = $desc;
-			$task= $record;
-			array_push($this->_data, $record);
-		}
-					
-		// --------------------
-		// rebuild the keys table
-		$this->reindex();
+        if(file_exists($this->_origin)) {
+            $data = simplexml_load_file($this->_origin);
+            foreach ($data->children() as $item)
+            {
+                // build object from a row
+                $record = new stdClass();
+                foreach($item->attributes() as $key => $value) {
+                    $record->{$key} = (string) $value;
+                }
+                $record->task = (string) $item[0];
+                $key = $record->{$this->_keyfield};
+                $this->_data[$key] = $record;
+            }
+        }
+        // --------------------
+        // rebuild the keys table
+        $this->reindex();
 	}
 
 	/**
@@ -79,16 +71,32 @@ class XML_Model extends Memory_Model
 	 */
 	protected function store()
 	{
-		// rebuild the keys table
-		$this->reindex();
-		//---------------------
-		if (($handle = fopen($this->_origin, "w")) !== FALSE)
-		{
-			fputcsv($handle, $this->_fields);
-			foreach ($this->_data as $key => $record)
-				fputcsv($handle, array_values((array) $record));
-			fclose($handle);
-		}
+        // rebuild the keys table
+        $this->reindex();
+        //---------------------
+        if(file_exists($this->_origin))
+        {
+            $xml = new DOMDocument( "1.0");
+            $xml->preserveWhiteSpace = false;
+            $xml->formatOutput       = true;
+            $xml_data = $xml->createElement(get_class($this));
+
+            foreach($this->_data as $key => $record)
+            {
+                $xml_item  = $xml->createElement("task", htmlspecialchars($record->task));
+                foreach($record as $field => $value)
+                {
+                    if($field != "task") {
+                        $xml_item->setAttribute($field, $value);
+                    }
+                }
+                $xml_item->setAttribute("deadline", null);
+                $xml_item->setAttribute("flag", null);
+                $xml_data->appendChild($xml_item);
+            }
+            $xml->appendChild($xml_data);
+            $xml->save($this->_origin);
+        }
 		// --------------------
 	}
 

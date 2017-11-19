@@ -98,7 +98,6 @@ class Mtce extends Application {
             'fsize' => form_label('Size') . form_dropdown('size', $this->app->size(), $task->size),
             'fgroup' => form_label('Group') . form_dropdown('group', $this->app->group(), $task->group),
             'fstatus' => form_label('Status') . form_dropdown('status', $this->app->status(), $task->status),
-            'zsubmit'    => form_submit('submit', 'Update the TODO task'),
         );
         $this->data = array_merge($this->data, $fields);
 
