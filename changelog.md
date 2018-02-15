@@ -14,3 +14,6 @@ YY-MM-DD | Name abbreviation (XX) | Feature description
 Most recent changes should go at the top of the changelog
 
 ## Changelog
+18-02-15 | TD | Added task list to homepage
+
+18-02-15 | JA | Added database autoload and task controller
