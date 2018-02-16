@@ -8,6 +8,18 @@ Changelog format: [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdo
 
 ## [Unreleased]
 
+## *Version 0.2*
+
+Release Date: Feb 15, 2018
+
+## New Components
+
+## Updated Components
+- Update homepage to display a table with TODO .csv data
+- Update homepage content to show total task alerts
+- Update MY_Controller to display team name for page title
+- Update MY_Controller template rendering to provide pre rendered content
+
 ## *Version 0.1*
 
 Release Date: Feb 15, 2018
