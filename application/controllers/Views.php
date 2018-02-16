@@ -12,7 +12,7 @@ class Views extends Application
         $tasks = $this->tasks->all();   // get all the tasks
         $this->data['content'] = 'Ok'; // so we don't need pagebody
         $this->data['leftside'] = $this->makePrioritizedPanel($tasks);
-        //$this->data['rightside'] = $this->makeCategorizedPanel($tasks);
+        $this->data['rightside'] = $this->makeCategorizedPanel($tasks);
 
         $this->render('template_secondary'); 
     }
@@ -53,6 +53,16 @@ class Views extends Application
             return 1;
         else
             return 0;
+    }
+
+    /**
+     * Uses models/Tasks.php getCategorizedTasks method to get a list of 
+     * Tasks ordered by category
+     */
+    function makeCategorizedPanel($tasks)
+    {
+        $parms = ['display_tasks' => $this->tasks->getCategorizedTasks()];
+        return $this->parser->parse('by_category', $parms, true);
     }
 
 }
