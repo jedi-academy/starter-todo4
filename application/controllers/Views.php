@@ -11,8 +11,8 @@ class Views extends Application
         $this->data['pagetitle'] = 'Ordered TODO List';
         $tasks = $this->tasks->all();   // get all the tasks
         $this->data['content'] = 'Ok'; // so we don't need pagebody
-        $this->data['leftside'] = 'by_priority';
-        $this->data['rightside'] = 'by_category';
+        $this->data['leftside'] = $this->makePrioritizedPanel($tasks);
+        $this->data['rightside'] = $this->makeCategorizedPanel($tasks);
 
         $this->render('template_secondary'); 
     }
