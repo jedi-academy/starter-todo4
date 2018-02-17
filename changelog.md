@@ -13,8 +13,11 @@ Changelog format: [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdo
 Release Date: Feb 15, 2018
 
 ## New Components
+- Created Views.php controller and model; by_category.php and by_priority.php views
 
 ## Updated Components
+- Update Tasks.php to order unfished tasks by category
+- Update Views.php to grab tasks by priority
 - Update homepage to display a table with TODO .csv data
 - Update homepage content to show total task alerts
 - Update MY_Controller to display team name for page title
