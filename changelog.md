@@ -18,6 +18,7 @@ Release Date: Feb 15, 2018
 - Created Views.php controller and model; by_category.php and by_priority.php views
 
 ## Updated Components
+- Seperate maintenance page elements into modular (one item) template elements & update controller to work with new templates.
 - Update Tasks.php to order unfished tasks by category
 - Update Views.php to grab tasks by priority
 - Update homepage to display a table with TODO .csv data
