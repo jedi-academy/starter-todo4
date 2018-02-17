@@ -13,6 +13,8 @@ Changelog format: [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdo
 Release Date: Feb 15, 2018
 
 ## New Components
+- Create Mtce.php controller for maintenance page
+- Create itemlist.php view for maintenance page.
 - Created Views.php controller and model; by_category.php and by_priority.php views
 
 ## Updated Components
