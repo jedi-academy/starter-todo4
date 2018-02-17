@@ -1,16 +1,14 @@
-<h3>Tasks by Category</h3>
-
 <table class="table">
         <tr>
                 <th>Id</th>
                 <th>Task</th>
-                <th>Category</th>
+                <th>Status</th>
         </tr>
         {display_tasks}
         <tr>
             <td>{id}</td>
             <td>{task}</td>
-        <td>{group}</td>
+            <td>{status}</td>
         </tr>
-        {/display_tasks}    
+        {/display_tasks}
 </table>
