@@ -13,8 +13,14 @@ Changelog format: [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdo
 Release Date: Feb 15, 2018
 
 ## New Components
+- Create Mtce.php controller for maintenance page
+- Create itemlist.php view for maintenance page.
+- Created Views.php controller and model; by_category.php and by_priority.php views
 
 ## Updated Components
+- Seperate maintenance page elements into modular (one item) template elements & update controller to work with new templates.
+- Update Tasks.php to order unfished tasks by category
+- Update Views.php to grab tasks by priority
 - Update homepage to display a table with TODO .csv data
 - Update homepage content to show total task alerts
 - Update MY_Controller to display team name for page title
