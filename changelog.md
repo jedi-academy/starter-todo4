@@ -12,8 +12,6 @@ Release Date: Feb 17, 2018
 ## Updated Components
 - Updated changelog for master release.
 
-## Updated Components
-
 ## [Unreleased]
 
 ## *Version 0.2*
