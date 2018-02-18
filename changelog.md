@@ -16,6 +16,9 @@ Release Date: Feb 15, 2018
 - Create Mtce.php controller for maintenance page
 - Create itemlist.php view for maintenance page.
 - Created Views.php controller and model; by_category.php and by_priority.php views
+- Added Helpme.php controller to load help me page.
+- Added jobs.md data which is the help ad
+- Added Parsedown library to parse markdown files
 
 ## Updated Components
 - Seperate maintenance page elements into modular (one item) template elements & update controller to work with new templates.
