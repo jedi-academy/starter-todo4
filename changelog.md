@@ -6,6 +6,14 @@ Changelog format: [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdo
 
 ## [Released]
 
+## *Version 1.0*
+Release Date: Feb 17, 2018
+
+## Updated Components
+- Updated changelog for master release.
+
+## Updated Components
+
 ## [Unreleased]
 
 ## *Version 0.2*
