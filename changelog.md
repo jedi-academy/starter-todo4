@@ -13,6 +13,20 @@ Release Date: Feb 17, 2018
 - Updated changelog for master release.
 
 ## [Unreleased]
+## *Version 1.2*
+
+Release Date: March 3, 2018
+
+## New Components
+-
+
+## Updated Components
+- Update View controller to link list checkboxes on work page to update task
+  items in tasks.csv file.
+- Update Work page to have checkboxes to indicate task completion.
+- Update by_priority and by_category lists on Work page to have
+  form buttons for submmission.
+
 ## *Version 1.1*
 
 Release Date: March 3, 2018
