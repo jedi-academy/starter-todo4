@@ -18,9 +18,13 @@ Release Date: Feb 17, 2018
 Release Date: March 3, 2018
 
 ## New Components
+- Create Roles.php to track user login and tracking pages
 - Create itemnav.php for pagination navigation
 
 ## Updated Components
+- Update maintenance view to show user role associated with tasks.
+- Update config and autoload to work with user login fucntions
+- Update constants.php with Guest and Owner user roles
 - Update Mtce.php controller to work with paginating 10 tasks per page.
 
 ## *Version 0.2*
