@@ -13,6 +13,15 @@ Release Date: Feb 17, 2018
 - Updated changelog for master release.
 
 ## [Unreleased]
+## *Version 1.2*
+
+Release Date: March 3, 2018
+
+## New Components
+
+## Updated Components
+- Update by_priority and by_category lists to have form buttons for submmission.
+
 ## *Version 1.1*
 
 Release Date: March 3, 2018
