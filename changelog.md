@@ -22,6 +22,7 @@ Release Date: March 3, 2018
 - Create itemnav.php for pagination navigation
 
 ## Updated Components
+- Update maintenance view to show user role associated with tasks.
 - Update config and autoload to work with user login fucntions
 - Update constants.php with Guest and Owner user roles
 - Update Mtce.php controller to work with paginating 10 tasks per page.
