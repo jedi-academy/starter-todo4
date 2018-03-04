@@ -18,9 +18,14 @@ Release Date: Feb 17, 2018
 Release Date: March 3, 2018
 
 ## New Components
+-
 
 ## Updated Components
-- Update by_priority and by_category lists to have form buttons for submmission.
+- Update View controller to link list checkboxes on work page to update task
+  items in tasks.csv file.
+- Update Work page to have checkboxes to indicate task completion.
+- Update by_priority and by_category lists on Work page to have
+  form buttons for submmission.
 
 ## *Version 1.1*
 
