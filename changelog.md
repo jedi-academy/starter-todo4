@@ -13,6 +13,21 @@ Release Date: Feb 17, 2018
 - Updated changelog for master release.
 
 ## [Unreleased]
+## *Version 1.3*
+
+Release Date: March 4, 2018
+
+## New Components
+- Create views/itemadd.php which contains a link to add a new item
+- Create views/oneitemx.php so owner has clickable tasks to enable updating
+- Create views/itemedit.php to display the form
+
+## Updated Components
+- Update controller/Mtce to show owner specific features
+- Updated controller/Mtce to add, edit, and delete tasks using a form, to handle showing the form, and to handle form submission and cancellation
+- Update models/App.php to provide default values when one is not found
+- Updated models/Task.php to validate fields
+
 ## *Version 1.2*
 
 Release Date: March 3, 2018
