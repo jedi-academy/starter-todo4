@@ -7,6 +7,15 @@
     {fpriority}
     </div>
     <div class="form-group">
+    {fsize}
+    </div>
+    <div class="form-group">
+    {fgroup}
+    </div>
+    <div class="form-group">
+    {fstatus}
+    </div>
+    <div class="form-group">
     {zsubmit}
     </div>
     
