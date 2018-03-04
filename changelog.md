@@ -6,6 +6,13 @@ Changelog format: [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdo
 
 ## [Released]
 
+## *Version 2.0*
+Update based on Lab 6 - Add task completion functionality to site.
+Release Date: March 4, 2018
+
+## Updated Components
+- Updated changelog for master release 2.0.
+
 ## *Version 1.0*
 Release Date: Feb 17, 2018
 
