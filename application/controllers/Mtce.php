@@ -6,7 +6,26 @@ class Mtce extends Application {
 
   public function index()
   {
-    $tasks = $this->tasks->all(); // get all the tasks
+    $this->page(1);
+  }
+
+  // Extract & handle a page of items, defaulting to the beginning
+  function page($num = 1)
+  {
+    $records = $this->tasks->all(); // get all the tasks
+    $tasks = array(); // start with an empty extract
+
+    // use a foreach loop, because the record indices may not be sequential
+    $index = 0; // where are we in the tasks list
+    $count = 0; // how many items have we added to the extract
+    $start = ($num - 1) * $this->items_per_page;
+    foreach($records as $task) {
+      if ($index++ >= $start) {
+        $tasks[] = $task;
+        $count++;
+      }
+      if ($count >= $this->items_per_page) break;
+    }
     $this->show_page($tasks);
   }
 
@@ -15,7 +34,7 @@ class Mtce extends Application {
   {
     $this->data['pagetitle'] = 'TODO List Maintenance';
     // build the task presentation output
-    $result = ''; // start with an empty array      
+    $result = ''; // start with an empty array
     foreach ($tasks as $task)
     {
       if (!empty($task->status))
