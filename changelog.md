@@ -21,6 +21,7 @@ Release Date: March 3, 2018
 - Create itemnav.php for pagination navigation
 
 ## Updated Components
+- Update constants.php with Guest and Owner user roles
 - Update Mtce.php controller to work with paginating 10 tasks per page.
 
 ## *Version 0.2*
