@@ -14,11 +14,11 @@ class Views extends Application
         $this->data['leftside'] = $this->makePrioritizedPanel($tasks);
         $this->data['rightside'] = $this->makeCategorizedPanel($tasks);
 
-        $this->render('template_secondary'); 
+        $this->render('template_secondary');
     }
 
     /**
-     * Grabs all of the unfinished tasks, order 
+     * Grabs all of the unfinished tasks, order
      * them by high to low priority and returns them
      * @param $tasks to tasks list
      */
@@ -35,12 +35,14 @@ class Views extends Application
         foreach ($undone as $task)
             $task->priority = $this->app->priority($task->priority);
 
-        // convert the array of task objects into an array of associative objects       
+        // convert the array of task objects into an array of associative objects
         foreach ($undone as $task)
             $converted[] = (array) $task;
 
         // and then pass them on
         $parms = ['display_tasks' => $converted];
+        $role = $this->session->userdata('userrole');
+        $parms['completer'] = ($role == ROLE_OWNER) ? '/views/complete' : '#';
         return $this->parser->parse('by_priority', $parms, true);
     }
 
@@ -56,12 +58,14 @@ class Views extends Application
     }
 
     /**
-     * Uses models/Tasks.php getCategorizedTasks method to get a list of 
+     * Uses models/Tasks.php getCategorizedTasks method to get a list of
      * Tasks ordered by category
      */
     function makeCategorizedPanel($tasks)
     {
         $parms = ['display_tasks' => $this->tasks->getCategorizedTasks()];
+        $role = $this->session->userdata('userrole');
+        $parms['completer'] = ($role == ROLE_OWNER) ? '/views/complete' : '#';
         return $this->parser->parse('by_category', $parms, true);
     }
 
