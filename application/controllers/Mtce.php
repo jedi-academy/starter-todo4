@@ -27,6 +27,10 @@ class Mtce extends Application {
       if ($count >= $this->items_per_page) break;
     }
     $this->data['pagination'] = $this->pagenav($num);
+    // INSERT next three lines
+    $role = $this->session->userdata('userrole');
+    if ($role == ROLE_OWNER) 
+        $this->data['pagination'] .= $this->parser->parse('itemadd',[], true);
     $this->show_page($tasks);
   }
 
