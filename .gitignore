@@ -18,5 +18,8 @@ application/logs/*
 /nbproject/private/
 /nbproject/
 
+#composer
+composer.lock
+
 #project local files
 /tmp/*
