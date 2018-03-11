@@ -8,8 +8,7 @@
          stopOnError="false"
          stopOnFailure="false"
          stopOnIncomplete="false"
-         stopOnSkipped="false"
->
+         stopOnSkipped="false">
     <testsuites>
         <testsuite name="My Test Suite">
             <directory>./tests/</directory>
@@ -21,6 +20,6 @@
         </whitelist>
     </filter>
     <logging>
-        <log type="coverage-clover" target="tests/build/logs/clover.xml"/>
+        <log type="coverage-clover" target="build/logs/clover.xml"/>
     </logging>
 </phpunit>

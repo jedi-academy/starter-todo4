@@ -10,11 +10,10 @@ class TaskListTest extends TestCase
   {
     $this->CI = &get_instance();
     $this->CI->load->model('tasks');
-    $this->item = new Tasks();
+    $this->tasks = new Tasks();
   }
 
-  
-  // Check if task list is a valid size.
+  // Test if collection has more uncompleted tasks than completed ones
   public function testListSize()
   {
     $completed = $this->tasks->getCompletedTask();

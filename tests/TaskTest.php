@@ -14,13 +14,9 @@ class TaskTest extends TestCase
                 $this->item = new Task();
         }
 
-        // Check if task name is longer than 30 characters
-        function testSetTask()
-        {
-            $expected = 'A Task name cannot be longer than 30 characters';
-            $this->task->setId(1);
-            $this->task->setTask($expected);
-            $this->assertEquals($expected, $this->task->task);
+        function testValidId() {
+            $expected = 123;
+            $this->item->id = $expected;
+            $this->assertEquals($expected, $this->item->id);
         }
-
 }
