@@ -17,7 +17,6 @@ class Task extends Entity {
     if (strlen($value) > 10)
     throw new Exception('An ID cannot be longer than 10 characters');
     $this->id = $value;
-    return $this;
   }
 
   // insist that a task be present and no longer than 30 characters
@@ -27,7 +26,6 @@ class Task extends Entity {
     if (strlen($value) > 30)
     throw new Exception('A Task name cannot be longer than 30 characters');
     $this->task = $value;
-    return $this;
   }
 
   // insist that priority is between 1 and 3
@@ -36,7 +34,6 @@ class Task extends Entity {
     if (!in_array($value, $allowed))
     throw new Exception('Must be a value from 1 to 3');
     $this->priority = $value;
-    return $this;
   }
 
   // insist that size is between 1 and 3
@@ -45,7 +42,6 @@ class Task extends Entity {
     if (!in_array($value, $allowed))
     throw new Exception('Must be a value from 1 to 3');
     $this->size = $value;
-    return $this;
   }
 
   // insist that groups is between 1 and 4
@@ -54,35 +50,30 @@ class Task extends Entity {
     if (!in_array($value, $allowed))
     throw new Exception('Must be a value from 1 to 3');
     $this->group = $value;
-    return $this;
   }
 
   // insist that a a deadline is at least 8 digits
   public function setDeadline($value) {
-      if (strlen($value) > 8)
-      throw new Exception('An date deadline cannot be longer than 8 digit');
-      if( !isNumeric($value))
-      throw new Exception('An date deadline must be numeric');
-      $this->deadline = $value;
-      return $this;
-    }
-
-    // insist that status is either 1 or 2
-    public function setStatus($value) {
-      $allowed = ['1', '2'];
-      if (!in_array($value, $allowed))
-      throw new Exception('Must be a value from 1 to 3');
-      $this->priority = $value;
-      return $this;
-    }
-
-    // insist that flag must be set to 1 or not
-    public function setFlag($value) {
-      if (strlen($value) != 1)
-      throw new Exception('Flag value must be 1');
-      $this->flag = $value;
-      return $this;
-    }
-
+    if (strlen($value) > 8)
+    throw new Exception('An date deadline cannot be longer than 8 digit');
+    if( !isNumeric($value))
+    throw new Exception('An date deadline must be numeric');
+    $this->deadline = $value;
   }
+
+  // insist that status is either 1 or 2
+  public function setStatus($value) {
+    $allowed = ['1', '2'];
+    if (!in_array($value, $allowed))
+    throw new Exception('Must be a value from 1 to 3');
+    $this->priority = $value;
+  }
+
+  // insist that flag must be set to 1 or not
+  public function setFlag($value) {
+    if (strlen($value) != 1)
+    throw new Exception('Flag value must be 1');
+    $this->flag = $value;
+  }
+
 }
