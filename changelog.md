@@ -6,6 +6,10 @@ Changelog format: [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdo
 
 ## [Released]
 
+## *Version 3.0*
+Update based on Lab 7 - Added unit testing functionality to site.
+Release Date: March 11, 2018
+
 ## *Version 2.0*
 Update based on Lab 6 - Add task completion functionality to site.
 Release Date: March 4, 2018
@@ -20,6 +24,30 @@ Release Date: Feb 17, 2018
 - Updated changelog for master release.
 
 ## [Unreleased]
+## *Version 2.2*
+
+Release Date: March 11, 2018
+
+## New Components
+- Link to Travis CI
+- Create task folder with Bootstrap.php, TaskTest.php, TaskListTest.php files
+- Add phpunit.xml file
+
+## Updated Components
+- Update Task tests and TaskList collection tests.
+
+## *Version 2.1*
+
+Release Date: March 8, 2018
+
+## New Components
+- Create Task.php entity model
+- Installed phpunit 6 test files to project
+
+## Updated Components
+- Update Entity.php with magic getter
+- Update .gitignore to ignore local composer and phpunit test files
+
 ## *Version 1.3*
 
 Release Date: March 4, 2018
