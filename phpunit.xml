@@ -21,5 +21,7 @@
     </filter>
     <logging>
         <log type="coverage-clover" target="build/logs/clover.xml"/>
+        <log type="coverage-html" target="tests/coverage/report" lowUpperBound="35" highLowerBound="70"/>
+        <log type="coverage-text" target="tests/coverage/coverage.txt" showUncoveredFiles="false"/>
     </logging>
 </phpunit>
