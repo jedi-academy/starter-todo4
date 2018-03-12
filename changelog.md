@@ -6,6 +6,10 @@ Changelog format: [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdo
 
 ## [Released]
 
+## *Version 3.0*
+Update based on Lab 7 - Added unit testing functionality to site.
+Release Date: March 11, 2018
+
 ## *Version 2.0*
 Update based on Lab 6 - Add task completion functionality to site.
 Release Date: March 4, 2018
