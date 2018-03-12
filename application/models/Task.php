@@ -1,14 +1,14 @@
 <?php
 
 class Task extends Entity {
-  public $id;
-  public $task;
-  public $priority;
-  public $size;
-  public $group;
-  public $deadline;
-  public $status;
-  public $flag;
+  protected $id;
+  protected $task;
+  protected $priority;
+  protected $size;
+  protected $group;
+  protected $deadline;
+  protected $status;
+  protected $flag;
 
   // insist that an ID be present
   public function setId($value) {
@@ -20,8 +20,8 @@ class Task extends Entity {
   }
 
   // insist that a task be present and no longer than 30 characters
-  public function setTask($task) {
-    if (empty($task))
+  public function setTask($value) {
+    if (empty($value))
     throw new Exception('A Task name cannot be empty');
     if (strlen($value) > 30)
     throw new Exception('A Task name cannot be longer than 30 characters');
@@ -56,7 +56,7 @@ class Task extends Entity {
   public function setDeadline($value) {
     if (strlen($value) > 8)
     throw new Exception('An date deadline cannot be longer than 8 digit');
-    if( !isNumeric($value))
+    if( !is_numeric($value))
     throw new Exception('An date deadline must be numeric');
     $this->deadline = $value;
   }
@@ -65,8 +65,8 @@ class Task extends Entity {
   public function setStatus($value) {
     $allowed = ['1', '2'];
     if (!in_array($value, $allowed))
-    throw new Exception('Must be a value from 1 to 3');
-    $this->priority = $value;
+    throw new Exception('Must be a value from 1 to 2');
+    $this->status = $value;
   }
 
   // insist that flag must be set to 1 or not
