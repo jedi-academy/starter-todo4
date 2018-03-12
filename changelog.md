@@ -25,10 +25,12 @@ Release Date: Feb 17, 2018
 Release Date: March 11, 2018
 
 ## New Components
+- Link to Travis CI
 - Create task folder with Bootstrap.php, TaskTest.php, TaskListTest.php files
 - Add phpunit.xml file
 
 ## Updated Components
+- Update Task tests and TaskList collection tests.
 
 ## *Version 2.1*
 
