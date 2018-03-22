@@ -8,7 +8,7 @@ class Tasks extends XML_Model{
 
   private $CI; // use this to reference the CI instance
   public function __construct() {
-      parent::__construct(APPPATH . '../data/task.xml');
+      parent::__construct(APPPATH . '../data/tasks.xml', 'id');
       $this->CI = &get_instance(); // retrieve the CI instance
   }
 
