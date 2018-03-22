@@ -7,8 +7,10 @@ Author     : Li-Yan Tong
 Description:
 Task list for Lab08 website sorted through a mixed approach
 -->
-<tasklist>
-  <task id="1" name="COMP1234">
+<task>
+  <task>
+    <id>1</id>
+    <task>COMP1234</task>
     <priority>3</priority>
     <size>3</size>
     <group>2</group>
@@ -17,7 +19,9 @@ Task list for Lab08 website sorted through a mixed approach
     <flag></flag>
   </task>
 
-  <task id="2" name="Mow the lawn">
+  <task>
+    <id>2</id>
+    <task>Mow the lawn</task>
     <priority>2</priority>
     <size>2</size>
     <group>1</group>
@@ -26,7 +30,9 @@ Task list for Lab08 website sorted through a mixed approach
     <flag></flag>
   </task>
 
-  <task id="3" name="Wash the car">
+  <task>
+    <id>3</id>
+    <task>Wash the car</task>
     <priority>2</priority>
     <size>2</size>
     <group>1</group>
@@ -35,7 +41,9 @@ Task list for Lab08 website sorted through a mixed approach
     <flag></flag>
   </task>
 
-  <task id="4" name="Paint the fence">
+  <task>
+    <id>4</id>
+    <task>Paint the fence</task>
     <priority>1</priority>
     <size>2</size>
     <group>1</group>
@@ -44,7 +52,9 @@ Task list for Lab08 website sorted through a mixed approach
     <flag></flag>
   </task>
 
-  <task id="5" name="Intramural hockey game">
+  <task>
+    <id>5</id>
+    <task>Intramural hockey game</task>
     <priority>1</priority>
     <size>2</size>
     <group>4</group>
@@ -53,7 +63,9 @@ Task list for Lab08 website sorted through a mixed approach
     <flag></flag>
   </task>
 
-  <task id="6" name="Canucks hockey game">
+  <task>
+    <id>6</id>
+    <task>Canucks hockey game</task>
     <priority>3</priority>
     <size>3</size>
     <group>4</group>
@@ -62,4 +74,4 @@ Task list for Lab08 website sorted through a mixed approach
     <flag></flag>
   </task>
 
-</tasklist>
+</task>
