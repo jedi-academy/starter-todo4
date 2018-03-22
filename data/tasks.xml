@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<tasks>
+<task id="2">
+  <task>Mow the lawn</task>
+  <priority>2</priority>
+  <size>2</size>
+  <group>1</group>
+  <deadline></deadline>
+  <status>2</status>
+  <flag></flag>
+</task>
+<task id="3">
+  <task>Wash the car</task>
+  <priority>2</priority>
+  <size>2</size>
+  <group>1</group>
+  <deadline></deadline>
+  <status></status>
+  <flag></flag>
+</task>
+<task id="4">
+  <task>Paint the fence</task>
+  <priority>1</priority>
+  <size>2</size>
+  <group>1</group>
+  <deadline></deadline>
+  <status></status>
+  <flag></flag>
+</task>
+<task id="6">
+  <task>Intramural hockey game</task>
+  <priority>1</priority>
+  <size>2</size>
+  <group>4</group>
+  <deadline></deadline>
+  <status></status>
+  <flag></flag>
+</task>
+<task id="7">
+  <task>Canucks hockey game</task>
+  <priority>3</priority>
+  <size>3</size>
+  <group>4</group>
+  <deadline>20170305</deadline>
+  <status></status>
+  <flag></flag>
+</task>
+<task id="8">
+  <task>Buy steel-toed boots</task>
+  <priority>2</priority>
+  <size>1</size>
+  <group>3</group>
+  <deadline></deadline>
+  <status></status>
+  <flag></flag>
+</task>
+<task id="9">
+  <task>Learn French</task>
+  <priority>1</priority>
+  <size>3</size>
+  <group>3</group>
+  <deadline>20161231</deadline>
+  <status>1</status>
+  <flag></flag>
+</task>
+<task id="10">
+  <task>Hit the gym</task>
+  <priority>2</priority>
+  <size>1</size>
+  <group>4</group>
+  <deadline></deadline>
+  <status></status>
+  <flag></flag>
+</task>
+<task id="11">
+  <task>Pay bills</task>
+  <priority>3</priority>
+  <size>1</size>
+  <group>1</group>
+  <deadline></deadline>
+  <status></status>
+  <flag></flag>
+</task>
+<task id="12">
+  <task>Meet George</task>
+  <priority>2</priority>
+  <size>1</size>
+  <group>1</group>
+  <deadline></deadline>
+  <status></status>
+  <flag></flag>
+</task>
+<task id="13">
+  <task>Buy milk &amp; bread</task>
+  <priority>2</priority>
+  <size>1</size>
+  <group>1</group>
+  <deadline></deadline>
+  <status></status>
+  <flag>1</flag>
+</task>
+<task id="14">
+  <task>Read War &amp; Peace</task>
+  <priority>1</priority>
+  <size>3</size>
+  <group>1</group>
+  <deadline></deadline>
+  <status></status>
+  <flag></flag>
+</task>
+<task id="15">
+  <task>Organize the study</task>
+  <priority>1</priority>
+  <size>4</size>
+  <group>1</group>
+  <deadline></deadline>
+  <status></status>
+  <flag></flag>
+</task>
+<task id="16">
+  <task></task>
+  <priority>1</priority>
+  <size></size>
+  <group></group>
+  <deadline></deadline>
+  <status></status>
+  <flag></flag>
+</task>
+</tasks>

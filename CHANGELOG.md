@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.11.0] - 2018-03-22
+### Added
+- Changed tasks.csv to tasks.xml
+
 ## [1.10.0] - 2018-03-01
 ### Added
 - Added .travis.yml
