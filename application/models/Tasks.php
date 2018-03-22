@@ -4,11 +4,12 @@
 * Task Model
 */
 
-class Tasks extends CSV_Model {
+class Tasks extends CSV_Model{
 
-  public function __construct()
-  {
-    parent::__construct(APPPATH . '../data/tasks.csv', 'id');
+  private $CI; // use this to reference the CI instance
+  public function __construct() {
+      parent::__construct(APPPATH . '../data/tasks.csv', 'id');
+      $this->CI = &get_instance(); // retrieve the CI instance
   }
 
   /**
@@ -26,7 +27,7 @@ class Tasks extends CSV_Model {
 
     // substitute the category name, for sorting
     foreach ($undone as $task)
-    $task->group = $this->app->group($task->group);
+    $task->group = $this->CI->app->group($task->group); // use CI to get at the app model
 
     // order them by category
     usort($undone, array("Tasks","orderByCategory"));
