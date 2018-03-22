@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.12.1] - 2018-03-22
+### Added
+- Fixed bugs with model
+
+
 ## [1.12.0] - 2018-03-22
 ### Added
 - Changed XML formatting
