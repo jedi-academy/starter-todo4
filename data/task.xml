@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+Document   : task.xml
+Created on : March 22, 2018
+Author     : Li-Yan Tong
+Description:
+Task list for Lab08 website sorted through a mixed approach
+-->
+<tasklist>
+  <task id="1" name="COMP1234">
+    <priority>3</priority>
+    <size>3</size>
+    <group>2</group>
+    <deadline>20170219</deadline>
+    <status>1</status>
+    <flag></flag>
+  </task>
+
+  <task id="2" name="Mow the lawn">
+    <priority>2</priority>
+    <size>2</size>
+    <group>1</group>
+    <deadline></deadline>
+    <status>2</status>
+    <flag></flag>
+  </task>
+
+  <task id="3" name="Wash the car">
+    <priority>2</priority>
+    <size>2</size>
+    <group>1</group>
+    <deadline></deadline>
+    <status></status>
+    <flag></flag>
+  </task>
+
+  <task id="4" name="Paint the fence">
+    <priority>1</priority>
+    <size>2</size>
+    <group>1</group>
+    <deadline></deadline>
+    <status>2</status>
+    <flag></flag>
+  </task>
+
+  <task id="5" name="Intramural hockey game">
+    <priority>1</priority>
+    <size>2</size>
+    <group>4</group>
+    <deadline></deadline>
+    <status></status>
+    <flag></flag>
+  </task>
+
+  <task id="6" name="Canucks hockey game">
+    <priority>3</priority>
+    <size>3</size>
+    <group>4</group>
+    <deadline>20170305</deadline>
+    <status></status>
+    <flag></flag>
+  </task>
+
+</tasklist>
