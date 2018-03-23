@@ -15,5 +15,12 @@ application/logs/*
 !application/logs/index.html
 !application/logs/.htaccess
 /vendor/
+/tests/coverage/
 /nbproject/private/
 /nbproject/
+
+#composer
+composer.lock
+
+#project local files
+/tmp/*
