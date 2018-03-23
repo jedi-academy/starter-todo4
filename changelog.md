@@ -24,6 +24,18 @@ Release Date: Feb 17, 2018
 - Updated changelog for master release.
 
 ## [Unreleased]
+## *Version 3.1*
+
+Release Date: March 22, 2018
+
+## New Components
+- Add tasks.xml file
+
+## Updated Components
+- Modified Tasks.php to extend XML_Model
+- Modified XML_Model load() function to utiilize simplexml_load_file
+
+
 ## *Version 2.2*
 
 Release Date: March 11, 2018
