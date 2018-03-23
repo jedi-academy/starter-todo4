@@ -71,4 +71,15 @@
     <flag/>
     <submit>Update the TODO task</submit>
   </task>
+  <task>
+    <id>8</id>
+    <task>Store test</task>
+    <priority>1</priority>
+    <size>1</size>
+    <group>2</group>
+    <deadline/>
+    <status>2</status>
+    <flag/>
+    <submit>Update the TODO task</submit>
+  </task>
 </task>
