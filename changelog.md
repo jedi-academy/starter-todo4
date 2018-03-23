@@ -6,6 +6,10 @@ Changelog format: [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdo
 
 ## [Released]
 
+## *Version 4.0*
+Update based on Lab 8 - Modified data access from CSV_Model to XML_Model.
+Release Date: March 23, 2018
+
 ## *Version 3.0*
 Update based on Lab 7 - Added unit testing functionality to site.
 Release Date: March 11, 2018
@@ -24,6 +28,18 @@ Release Date: Feb 17, 2018
 - Updated changelog for master release.
 
 ## [Unreleased]
+## *Version 3.1*
+
+Release Date: March 22, 2018
+
+## New Components
+- Add tasks.xml file
+
+## Updated Components
+- Modified Tasks.php to extend XML_Model
+- Modified XML_Model load() function to utilize simplexml_load_file
+
+
 ## *Version 2.2*
 
 Release Date: March 11, 2018
